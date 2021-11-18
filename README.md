@@ -4,3 +4,8 @@ Credits of task sheet go to XJTLU which will not be published.
 This implementation applies the 'push' mechanism. When a new file is added to one machine, it will push it to neighbours directly.  
 This mechanism is invented by the author (Ethan) that differs from the normal methods taught in lab session.  
 The author achieved 85% in this module.  
+
+---------------------------UPDATE in 18/11/2021---------------------------------
+Please do NOT copy this piece of code directly for CAN201 in 2021!!!
+The project specification has been changed.
+But you can still refer to the idea behind the codes ：)
