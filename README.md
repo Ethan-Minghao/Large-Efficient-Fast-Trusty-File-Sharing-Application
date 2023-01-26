@@ -6,7 +6,7 @@ There is a plenty of network-based file sharing applications in nowadays world s
 
 Keywords: File sharing application, Python Socket Programming, Network
 
-1. Introduction
+A. Introduction
 1. Problem Statement
 
 We are required to develop a file sharing application via using Python Socket network pro- gramming techniques in this coursework [1]. Basically, the developed application should have four specific properties, say, large, efficient, flexible and trusty which will be demonstrated in detail as followed. Firstly, large refers to large file transmission which size is over 1 GB and any type of files should be taken into consideration such as folders and hidden files [1]. Fol- lowed by that, Efficient means it should be developed as a comprehensive application which performs a high transmission efficiency. Moreover, automatic file synchronization and partial update function are also required in this part. The property flexible figures that in this app the IP addresses should be set as an argument and the property trusty points that the certain mecha- nism such as encryption and recovering from interruption should be implemented. Above all, it is quite a challenge coursework for Year 3 students to complete due to copious and demanding requirements to fulfilland the sang in coding.
@@ -15,7 +15,7 @@ We are required to develop a file sharing application via using Python Socket ne
 
 In recent years, there are many emergent file sharing applications based on network such as Dropbox and iCloud [1]. One reason accountable for the population is such cloud storage method bring convenience when compared to traditional hard storage devices. Moreover, it could guarantee the files security of users even in transmission [2]. Taking a sterling platform Dropbox as an example, the design of its security mechanism is quite astute. It requires two separate steps of verification before used that not only a private password is required but a verification code sent to customer’s mobile phone is need [3]. With such two steps, many Internet attacks may be prevented. Actually, there are different kinds of advantages of other existing file sharing applications which is worthy of studying and following. However, as a novice in computer science who have just studied networking, the firststep is develop my own filesharing application (Ethan’s box) which could fulfillthe coursework requirements.
 
-2. Methodology
+B. Methodology
 
 This part will illustrate the methodology and the general design method of the file sharing application (Ethan’s box) which covers four significantsections: general design idea, transmis- sion method, protocol design and application structure. More accurate and specificdescription and implementation steps will be demonstrated later in this report.
 
@@ -43,7 +43,7 @@ According to the function of each modules and the description mentioned above, t
 
 Figure 2.2: File Sharing Activity Diagram
 
-3. Implementation
+C. Implementation
 1. Module Specification
 
 Accordingtothedesignideaandmethodologymentionedabove,theapplicationisdeveloped incrementally in each step. In each round, there will be some new features and functions added to the current one. The table as followed will demonstrate all the functions defined in this program. A function marked with [Function] means it only completes one essential task such as getting fileblock and filesize. One marked with [Module] which may perform a composite function is used in thread and the one denoted with [Thread] refers to actual thread running in the program.
@@ -80,7 +80,7 @@ One specificrequirement claims that the application should have the ability to r
 
 When a global variable is visited or changed by different threads at the same time, it will result in a great catastrophe. In this program, when a folder and a big file are put into sharing directory simultaneously, it is possible that the big file is transmitted into the folder or folder files are transmitted outside it. Since the current sharing directory ‘subfileDir’ will change when folder operation occurs, it is necessary to use event lock to protect such variable. After adding locks in the program which make that only big file transmission ends can folder starts transmitting, the wrong position transmission problem is solved.
 
-4. Testing and Results
+D. Testing and Results
 
 Testing environment: Linux Tiny Core (Python 3.6.9 installed)
 
@@ -98,6 +98,6 @@ Figure 4.3: Modify Files and Send Figure 4.4: File Updated in VMA
 
 with an encryption mode. As the operation of phase one performed above, there will also be a test on single mini file transmission. Although the time consuming increased, the security during transmission is guaranteed by applying DES encryption. However, according to testing screenshots, there is a major defect in this application. When two or more files are placed into sharing directory simultaneously, fileswill be synchronized one by one other than parallel sharing that is owing to locks used in multithreading programming. Moreover, the bandwidth is not fully utilized during transmission because of just one TCP connection set at one time. Above all, although it seems that all the necessary functions are implemented successfully in Ethan’s box, the transmission rate is restricted to around 30 Mbps due to reasons mentioned above.
 
-5. Conclusions
+E. Conclusions
 
 To sum up, this report is designed to depict a file sharing application named Ethan’s box through the design methodology and specificimplementation. In implementation, it mentioned two significant programming skills that OOP and multithreading programming. Moreover, several dilemmas in the development process and appropriate solutions were demonstrated. In terms of requirement fulfillment and performance, necessary testing plans were carried out and relative analysis were provided. However, although all the requirements were fulfilled in this app, the question raised by this report will focus on how to improve transmission speed and how to allow many files synchronized at the same time. In the future plan, deep study about multithreading used in filetransmission may be performed. Moreover, there should be a specificresearch on how to utilize more bandwidth of the Internet during transmission.
